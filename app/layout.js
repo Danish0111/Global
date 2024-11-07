@@ -10,6 +10,7 @@ import Advantages from "@/Components/Advantages";
 import TextSlider from "@/Components/TextSlider";
 import Alumini from "@/Components/Alumini";
 import FAQS from "@/Components/FAQS";
+import Footer from "@/Components/Footer";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -54,6 +55,7 @@ export default function RootLayout({ children }) {
           <Alumini/>
           <Affiliation />
           <FAQS/>
+          <Footer/>
         </div>
       </body>
     </html>

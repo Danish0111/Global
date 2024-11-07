@@ -20,13 +20,13 @@ const News = [
 const LatestNews = () => {
   return (
     <>
-      <div className="news-and-events flex justify-around items-start bg-slate-100 p-6">
+      <div className="news-and-events flex flex-col lg:flex-row justify-around items-start bg-slate-100 p-6">
         {/* Latest News Section */}
         <div className="News w-[50%]">
           <div className="svg w-8 relative top-6">
             <svg preserveAspectRatio="xMidYMid meet" data-bbox="2.98 4.46 31.51 31.05" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" data-type="ugc" role="presentation" aria-hidden="true" aria-label="">
               <g>
-                <path d="M19.28 4.48c.3.47 2.74 9.77-1.73 12.73-4.48 2.96-5.79-.17-14.57 2.47 0 0 11.51-2.92 13.58 2.65 1.67 4.1-.3 4.55 1.33 13.18-.13-3.76-1.75-9.87 2.75-12.59 2.11-1.47 6.79.07 13.85-2.15-2.74.28-10 3.01-13.03-2.21-1.79-2.83-.06-10.55-2.17-14.1Z" fill="#f6605b" stroke="#000000" stroke-miterlimit="10" stroke-width=".5"></path>
+                <path d="M19.28 4.48c.3.47 2.74 9.77-1.73 12.73-4.48 2.96-5.79-.17-14.57 2.47 0 0 11.51-2.92 13.58 2.65 1.67 4.1-.3 4.55 1.33 13.18-.13-3.76-1.75-9.87 2.75-12.59 2.11-1.47 6.79.07 13.85-2.15-2.74.28-10 3.01-13.03-2.21-1.79-2.83-.06-10.55-2.17-14.1Z" fill="#f6605b" stroke="#000000" strokeMiterlimit="10" strokeWidth=".5"></path>
               </g>
             </svg>
           </div>

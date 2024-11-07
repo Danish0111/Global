@@ -294,15 +294,22 @@ body{
   text-transform: uppercase;
 }
 
-.news-and-events{
+.underline{
+  text-decoration: underline rgb(255, 217, 0);
+}
+/* .footer-logo{
+  mix-blend-mode: ;
+} */
+
+/* .news-and-events{
   height: 100%;
-  background: linear-gradient(315deg, #A6C4FA 0%, #E2E0FF 16.08008669133772%, #F9F8F8 34.45445278234649%, #C6DDFF 100%);
+  background: linear-gradient(315deg, #A6C4FA 0%, #E2E0FF 18.08008669133772%, #F9F8F8 34.45445278234649%, #C6DDFF 100%);
 }
 
 .courses{
   background: linear-gradient(360deg, #F9F8F8 15.112518845942983%, #C6DDFF 52.240311472039465%, #F9F8F8 91.03425678453947%);
-  /* background-color: #C6DDFF; */
-}
+  background-color: #C6DDFF;
+} */
 /* .nav{
   position: sticky;
   top: 0;
