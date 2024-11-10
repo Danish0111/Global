@@ -40,22 +40,22 @@ export default function RootLayout({ children }) {
         />
       </Head>
       <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* bg-[size:6rem_4rem] */}
-        
-        <Navbar />
+
+          <Navbar />
         <div className="flex flex-col">
-          <TextSlider/>
+          {/* <TextSlider/> */}
           {children}
-          <LatestNews />
+          {/* <LatestNews />
           <Courses/>
           <WhyToChoose/>
           <Advantages/>
           <Alumini/>
           <Affiliation />
-          <FAQS/>
-          <Footer/>
+          <FAQS/> */}
+          <Footer />
         </div>
       </body>
     </html>

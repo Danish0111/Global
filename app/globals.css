@@ -297,6 +297,30 @@ body{
 .underline{
   text-decoration: underline rgb(255, 217, 0);
 }
+
+/* .news-carousel-container .carousel-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px; 
+}
+
+.image-container {
+  width: 90%; 
+  height: 250px; 
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+} */
+
+
+
 /* .footer-logo{
   mix-blend-mode: ;
 } */

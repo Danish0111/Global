@@ -1,11 +1,22 @@
 "use client"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import Affiliation from "./Affiliation";
+import LatestNews from "@/Components/LatestNews";
+import Head from "next/head";
+import Courses from "@/Components/Courses";
+import WhyToChoose from "@/Components/WhyToChoose";
+import Advantages from "@/Components/Advantages";
+import TextSlider from "@/Components/TextSlider";
+import Alumini from "@/Components/Alumini";
+import FAQS from "@/Components/FAQS";
+import Footer from "@/Components/Footer";
 
 export default function Home() {
     return (
         <>
             <div className="">
+                <TextSlider />
                 <Carousel className="carousal-container"
                     autoPlay
                     interval={5000} // Time in ms, here it's 3 seconds
@@ -38,6 +49,14 @@ export default function Home() {
                         />
                     </div>
                 </Carousel>
+                <LatestNews />
+                <Courses />
+                <WhyToChoose />
+                <Advantages />
+                <Alumini />
+                <Affiliation />
+                <FAQS />
+                {/* <Footer /> */}
             </div>
         </>
     );

@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import ReactCardCarousel from "react-card-carousel";
 import CardCarousel from './CardCarousel';
+import NewsCarousel from './NewsCarousel';
 
 const News = [
   { id: 1, img: "https://globalinst.in/wp-content/uploads/2024/10/SDP-BANNER-GLOBAL.png", alt: 'news 1' },
@@ -20,7 +21,7 @@ const News = [
 const LatestNews = () => {
   return (
     <>
-      <div className="news-and-events flex flex-col lg:flex-row justify-around items-start bg-slate-100 p-6">
+      <div className="news-and-events flex flex-col lg:flex-row justify-center lg:justify-around items-start bg-slate-100 p-6">
         {/* Latest News Section */}
         <div className="News w-[50%]">
           <div className="svg w-8 relative top-6">
@@ -52,6 +53,7 @@ const LatestNews = () => {
             ))}
           </Swiper> */}
           <CardCarousel />
+          <NewsCarousel className="sm:block lg:hidden"/>
           <div className="svg relative top-96 z-10 w-14">
             {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="21.001 21.001 112.001 112" viewBox="21.001 21.001 112.001 112" height="" width="" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label="">
               <g>

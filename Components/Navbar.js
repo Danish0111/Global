@@ -1,4 +1,6 @@
 "use client";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import React, { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,13 +9,17 @@ import { faCaretDown, faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import Link from "next/link";
 
 const Navbar = () => {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  
   // Toggle the menu visibility on mobile
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleNavigation = (path) => {
+      router.push(path);
+  };
   return (
     <div className="nav bg-slate-100 sticky z-10 top-0 shadow-md">
       <div className="wraper hidden lg:flex justify-end lg:mb-4">
@@ -28,9 +34,15 @@ const Navbar = () => {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Static Actions">
-                  <DropdownItem key="new">Download Brochure</DropdownItem>
-                  <DropdownItem key="copy">Admission Enquiry Form</DropdownItem>
-                  <DropdownItem key="edit">Courses Offered</DropdownItem>
+                  <DropdownItem key="brochure">
+                    <Link href="/admission/brochure">Download Brochure</Link>
+                  </DropdownItem>
+                  <DropdownItem key="enquiry">
+                    <Link href="/admission/enquiry">Admission Enquiry Form</Link>
+                  </DropdownItem>
+                  <DropdownItem key="courses">
+                    <Link href="/admission/courses">Courses Offered</Link>
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </li>
@@ -59,9 +71,11 @@ const Navbar = () => {
         <div className="bottom-menu relative top-2 hidden lg:flex">
           <ul className="flex pt-0 gap-2">
             <li>
-              <Button color="primary" variant="light">
-                Home
-              </Button>
+              <Link href="/">
+                <Button color="primary" variant="light">
+                  Home
+                </Button>
+              </Link>
             </li>
             <li>
               <Dropdown>
@@ -72,14 +86,33 @@ const Navbar = () => {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Static Actions">
-                  <DropdownItem key="new">MCA</DropdownItem>
-                  <DropdownItem key="copy">MCA Integrated</DropdownItem>
-                  <DropdownItem key="edit">MBA</DropdownItem>
-                  <DropdownItem key="edit">BCA</DropdownItem>
-                  <DropdownItem key="edit">BBA</DropdownItem>
-                  <DropdownItem key="edit">B.COM</DropdownItem>
-                  <DropdownItem key="edit">BA</DropdownItem>
-                  <DropdownItem key="edit">B.ED</DropdownItem>
+                  <DropdownItem key="mca" onClick={() => handleNavigation("/courses/mca")}>
+                    MCA
+                  </DropdownItem>
+                  <DropdownItem key="mca-integrated" onClick={() => handleNavigation("/courses/mca-integrated")}>
+                    MCA Integrated
+                  </DropdownItem>
+                  <DropdownItem key="mca-integrated" onClick={() => handleNavigation("/courses/mba-integrated")}>
+                    MBA Integrated
+                  </DropdownItem>
+                  <DropdownItem key="mba" onClick={() => handleNavigation("/courses/mba")}>
+                    MBA
+                  </DropdownItem>
+                  <DropdownItem key="bca" onClick={() => handleNavigation("/courses/bca")}>
+                    BCA
+                  </DropdownItem>
+                  <DropdownItem key="bba" onClick={() => handleNavigation("/courses/bba")}>
+                    BBA
+                  </DropdownItem>
+                  <DropdownItem key="bcom" onClick={() => handleNavigation("/courses/bcom")}>
+                    B.COM
+                  </DropdownItem>
+                  <DropdownItem key="ba" onClick={() => handleNavigation("/courses/ba")}>
+                    BA
+                  </DropdownItem>
+                  <DropdownItem key="bed" onClick={() => handleNavigation("/courses/bed")}>
+                    B.ED
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </li>
@@ -149,9 +182,8 @@ const Navbar = () => {
 
         {/* Mobile Menu (Visible when isMenuOpen is true) */}
         <div
-          className={`lg:hidden absolute top-16 right-0 w-[100%] md:w-[50%] h-[100vh] flex flex-col justify-start bg-white shadow-md p-4 ${
-            isMenuOpen ? "block" : "hidden"
-          }`}
+          className={`lg:hidden absolute top-16 right-0 w-[100%] md:w-[50%] h-[100vh] flex flex-col justify-start bg-white shadow-md p-4 ${isMenuOpen ? "block" : "hidden"
+            }`}
         >
           <ul>
             <li>
@@ -168,14 +200,33 @@ const Navbar = () => {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Static Actions">
-                  <DropdownItem key="new">MCA</DropdownItem>
-                  <DropdownItem key="copy">MCA Integrated</DropdownItem>
-                  <DropdownItem key="edit">MBA</DropdownItem>
-                  <DropdownItem key="edit">BCA</DropdownItem>
-                  <DropdownItem key="edit">BBA</DropdownItem>
-                  <DropdownItem key="edit">B.COM</DropdownItem>
-                  <DropdownItem key="edit">BA</DropdownItem>
-                  <DropdownItem key="edit">B.ED</DropdownItem>
+                <DropdownItem key="mca" onClick={() => handleNavigation("/courses/mca")}>
+                    MCA
+                  </DropdownItem>
+                  <DropdownItem key="mca-integrated" onClick={() => handleNavigation("/courses/mca-integrated")}>
+                    MCA Integrated
+                  </DropdownItem>
+                  <DropdownItem key="mca-integrated" onClick={() => handleNavigation("/courses/mba-integrated")}>
+                    MBA Integrated
+                  </DropdownItem>
+                  <DropdownItem key="mba" onClick={() => handleNavigation("/courses/mba")}>
+                    MBA
+                  </DropdownItem>
+                  <DropdownItem key="bca" onClick={() => handleNavigation("/courses/bca")}>
+                    BCA
+                  </DropdownItem>
+                  <DropdownItem key="bba" onClick={() => handleNavigation("/courses/bba")}>
+                    BBA
+                  </DropdownItem>
+                  <DropdownItem key="bcom" onClick={() => handleNavigation("/courses/bcom")}>
+                    B.COM
+                  </DropdownItem>
+                  <DropdownItem key="ba" onClick={() => handleNavigation("/courses/ba")}>
+                    BA
+                  </DropdownItem>
+                  <DropdownItem key="bed" onClick={() => handleNavigation("/courses/bed")}>
+                    B.ED
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </li>

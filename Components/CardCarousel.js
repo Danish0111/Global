@@ -41,7 +41,7 @@ class MyCarousel extends Component {
             <div style={MyCarousel.CONTAINER_STYLE}>
                 <ReactCardCarousel autoplay={true} autoplay_speed={7000}>
                     {News.map((news, index) => (
-                        <div key={news.id} style={MyCarousel.CARD_STYLE}>
+                        <div key={news.id} className='hidden lg:block' style={MyCarousel.CARD_STYLE}>
 
                             <div className="news-card flex flex-col bg-white rounded-xl shadow-lg p-4 transition-transform transform duration-300">
                                 <div className="img flex justify-center items-center mb-4">
