@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const WhyToChoose = () => {
   return (
     <>
-      <div className="why-to-choose h-[100vh] flex flex-col gap-10 py-10 items-center">
+      <div className="why-to-choose h-[100%] lg:h-[100vh] flex flex-col gap-10 py-10 items-center">
         <div className="svg w-8 h-0 relative top-[15%] right-[45%] z-10">
           <svg
             viewBox="0 0 26 28"
@@ -28,34 +28,37 @@ const WhyToChoose = () => {
             </g>
           </svg>
         </div>
-        <h1 className='text-4xl font-bold'>why choose global educational institutes ?</h1>
+        <h1 className="text-4xl font-bold text-center">
+          Why choose Global Educational Institutes?
+        </h1>
 
         <div className="points flex flex-col justify-center items-center gap-10">
-          <div className="point flex gap-8 w-[80%]">
-            <div className='point_no'>
+          <div className="point flex flex-col md:flex-row gap-6 lg:gap-8 w-[80%]">
+            <div className="point_no">
               <span>01</span>
             </div>
             <div className="text w-[100%] text-start">
-              Global Educational Institutes are dynamic growth oriented institutes,established by Global Education Trust,Delhi in 2002 to conduct educational programs to equip aspiring students for a career in knowledge industries. The programs also position them to compete in today’s demanding economy of an inter-connected world. Global has maintained its commitment to provide overall growth of students by introducing innovative teaching methods and training them in soft skills.
+              Global Educational Institutes are dynamic, growth-oriented institutes, established by Global Education Trust, Delhi in 2002 to conduct educational programs that equip aspiring students for careers in knowledge industries. The programs position them to compete in today’s demanding global economy. Global has maintained its commitment to provide overall student growth through innovative teaching methods and soft skills training.
             </div>
           </div>
-          <div className="point flex gap-8 w-[80%]">
-            <div className='point_no'>
+          <div className="point flex flex-col md:flex-row gap-8 w-[80%]">
+            <div className="point_no">
               <span>02</span>
             </div>
             <div className="text w-[100%] text-start">
-              Global Educational Institutes offer MBA, MCA, MCA(Lateral Entry), BBA, BCA, B.Ed, BA and B.Com. programme.It has been approved by AICTE, Ministry of HRD, Goverment of India and affiliated to Dr. A.P.J. Abdul Kalam Technical University, Lucknow and C.C.S. University Meerut.
+              Global Educational Institutes offer MBA, MCA, MCA (Lateral Entry), BBA, BCA, B.Ed, BA, and B.Com programs. It has been approved by AICTE, Ministry of HRD, Government of India, and is affiliated with Dr. A.P.J. Abdul Kalam Technical University, Lucknow, and C.C.S. University, Meerut.
             </div>
           </div>
-          <div className="point flex gap-8 w-[80%]">
-            <div className='point_no'>
+          <div className="point flex flex-col md:flex-row gap-8 w-[80%]">
+            <div className="point_no">
               <span>03</span>
             </div>
             <div className="text w-[100%] text-start">
-              Global Educational Institutes are located in the most strategic location of Delhi/NCR-one of the most promising and secure city, Greater Noida. It has close proximity to the world of business and industries. The institute is located in Knowledge Park-I, an area earmarked by Greater Noida Industrial Development Authority for Educational Institutes. The fresh graduates have good opportunities for their career due to the growing rate of SEZs and industries in the area.
+              Global Educational Institutes are strategically located in Greater Noida, Delhi/NCR, one of the most promising and secure cities in India. The institute is located in Knowledge Park-I, an area earmarked by Greater Noida Industrial Development Authority for educational institutes. The proximity to business and industry hubs offers fresh graduates excellent career opportunities in the growing SEZs and industries in the region.
             </div>
           </div>
         </div>
+
         <div className="svg w-8 h-0 relative bottom-[20%] left-[40%] z-10">
         <svg preserveAspectRatio="xMidYMid meet" data-bbox="2.8 13.6 60 56.8" viewBox="2.8 13.6 60 56.8" height="75" width="65" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label="">
     <g>
@@ -70,7 +73,7 @@ const WhyToChoose = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default WhyToChoose
+export default WhyToChoose;

@@ -298,6 +298,15 @@ body{
   text-decoration: underline rgb(255, 217, 0);
 }
 
+.view_all{
+  box-shadow: 2px 8px 0 black;
+}
+
+.view_all:hover{
+  box-shadow: 2px 5px 0 black;
+  background-color: #057EF6;
+  color: white;
+}
 /* .news-carousel-container .carousel-item {
   width: 100%;
   display: flex;

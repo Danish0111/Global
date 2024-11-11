@@ -19,7 +19,7 @@ const NewsCarousel = () => {
     return (
         <div className="">
             <Carousel
-                className="news-carousel-container w-[90vw]"
+                className="news-carousel-container w-[100%]"
                 autoPlay={false} // Manual slide
                 infiniteLoop={false}
                 showThumbs={false}
@@ -28,7 +28,7 @@ const NewsCarousel = () => {
                 showIndicators={false} // No indicators
             >
                 {groupedNews.map((newsPair, index) => (
-                    <div key={index} className="flex justify-center gap-4 lg:hidden">
+                    <div key={index} className="md:flex justify-center gap-4 sm:hidden lg:hidden">
                         {newsPair.map((news) => (
                             <div key={news.id} className="news-card flex flex-col bg-white rounded-xl shadow-lg p-4 transition-transform transform duration-300">
                                 <div className="img flex justify-center items-center mb-4">
