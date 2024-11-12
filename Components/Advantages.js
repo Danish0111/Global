@@ -3,15 +3,15 @@ import React from 'react';
 const Advantages = () => {
     return (
         <>
-            <div className="advantages h-[100vh] py-20 flex flex-col items-center gap-8">
+            <div className="advantages h-[100%] sm:text-xs md:text-sm px-4  py-20 flex flex-col items-center gap-8">
                 <h1 className="text-4xl font-bold text-center mb-8">
                     The GLOBAL EDUCATIONAL INSTITUTES Advantages
                 </h1>
 
                 <div className="container py-10 flex justify-center w-[100%] max-w-5xl gap-8">
                     <div className="left flex flex-col gap-8">
-                        <div className="upper flex gap-2">
-                            <div className="svg bg-white p-4 border border-black rounded-3xl">
+                        <div className="upper flex flex-col md:flex-row gap-5 md:gap-2">
+                            <div className="svg w-[30%] md:w-[20%] flex justify-center bg-white p-4 border border-black rounded-3xl">
                                 <svg preserveAspectRatio="xMidYMid meet" data-bbox="2 2.6 102.4 71.1" viewBox="2 2.6 102.4 71.1" height="76.4" width="105" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label="">
                                     <g>
                                         <path fill="#ff445e" d="M40.9 9a6.1 6.1 0 1 1-12.2 0 6.1 6.1 0 0 1 12.2 0z" data-color="1"></path>
@@ -36,14 +36,14 @@ const Advantages = () => {
                             <div className="advantage1 flex justify-center items-center bg-white p-4 text-medium text-center max-w-[300px]  mx-auto">
                                 <span>Linkages with academia and industries.</span>
                             </div>
-                            <div className="advantage2 flex justify-center items-center shadow-md bg-[#ff5764] p-4 text-medium text-center max-w-[300px] ">
+                            <div className="advantage2 flex justify-center items-center mr-40 md:mr-0 shadow-md bg-[#ff5764] p-4 text-medium text-center max-w-[300px] ">
                                 <span>Dedicated, skilled, experienced, and high-quality faculty.</span>
                             </div>
                             <div className="advantage3 flex justify-center items-center bg-white p-4 text-medium text-center max-w-[300px]  mx-auto">
                                 <span>Separate hostels for boys and girls at economic costs.</span>
                             </div>
                         </div>
-                        <div className="lower flex gap-4 mx-10">
+                        <div className="lower flex flex-col md:flex-row gap-4 md:mx-10">
                             <div className="advantage2 flex justify-center items-center bg-[#c6ddff] p-4 text-medium text-center max-w-[300px]  mx-auto">
                                 <span>Scholarship for meritorious students.</span>
                                 <div className="svg w-6 relative bottom-6">
@@ -59,7 +59,7 @@ const Advantages = () => {
                             <div className="advantage3 flex justify-center items-center shadow-md bg-white p-4 text-medium text-center max-w-[300px] ">
                                 <span>Seminars, confrences & Industrial vists.</span>
                             </div>
-                            <div className="advantage2 flex justify-center items-center shadow-md bg-[#ff5764] p-4 text-medium text-center max-w-[300px] ">
+                            <div className="advantage2 flex justify-center items-center ml-40 md:ml-0 shadow-md bg-[#ff5764] p-4 text-medium text-center max-w-[300px] ">
                                 <span>Communication skills & personality development programs.</span>
                             </div>
                         </div>

@@ -54,8 +54,8 @@ const LatestNews = () => {
             ))}
           </Swiper> */}
           <CardCarousel />
-          <NewsCarousel className="sm:block lg:hidden"/>
-          {/* <MobileNewsCard/> */}
+          <NewsCarousel className=""/>
+          <MobileNewsCard/>
           <div className="svg relative top-96 z-10 w-14">
             {/* <svg preserveAspectRatio="xMidYMid meet" data-bbox="21.001 21.001 112.001 112" viewBox="21.001 21.001 112.001 112" height="" width="" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label="">
               <g>

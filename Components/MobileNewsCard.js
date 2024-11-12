@@ -14,24 +14,24 @@ const MobileNewsCard = () => {
     return (
         <div className="news-carousel-container">
             <Carousel
-                className="w-[100%]"
-                autoPlay={true} // Manual slide
-                infiniteLoop={true}
+                className="w-full sm:w-[90%] mx-auto"
+                autoPlay={false}
+                infiniteLoop={false}
                 showThumbs={false}
-                showArrows={true} // Show arrows for manual navigation
+                showArrows={false}
                 showStatus={false}
-                
+                showIndicators={false}
             >
                 {News.map((news) => (
-                    <div key={news.id} className="news-card flex bg-white rounded-xl shadow-lg p-4 transition-transform transform duration-300">
-                        <div className="img flex justify-center items-center mb-4">
-                            <img className="rounded-lg w-full" src={news.img} alt={news.alt} />
+                    <div key={news.id} className="news-card flex flex-col md:hidden text-left bg-white rounded-xl shadow-lg p-2 sm:p-3 transition-transform transform duration-300">
+                        <div className="img flex justify-center items-center mb-4 sm:mb-3">
+                            <img className="rounded-lg w-full sm:h-36" src={news.img} alt={news.alt} />
                         </div>
-                        <div className="date text-sm font-semibold text-gray-500">29 Oct 2024</div>
-                        <div className="title text-lg font-semibold my-2 text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                        <div className="date text-sm sm:text-xs font-semibold text-gray-500">29 Oct 2024</div>
+                        <div className="title text-lg sm:text-base font-semibold my-2 text-blue-600 hover:text-blue-800 transition-colors duration-300">
                             Suspension of M.P.Ed. First Year 2024-25 Admission Merit List
                         </div>
-                        <div className="description text-sm font-light text-gray-600">
+                        <div className="description text-sm sm:text-xs font-light text-gray-600">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptates tempora, aspernatur nulla tenetur, voluptas distinctio architecto, harum eveniet qui magni impedit sequi beatae praesentium!
                         </div>
                     </div>

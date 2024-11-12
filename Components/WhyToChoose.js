@@ -59,7 +59,7 @@ const WhyToChoose = () => {
           </div>
         </div>
 
-        <div className="svg w-8 h-0 relative bottom-[20%] left-[40%] z-10">
+        <div className="svg w-8 h-0 relative bottom-[20%] sm:left-[30%] md:left-[40%] z-10">
         <svg preserveAspectRatio="xMidYMid meet" data-bbox="2.8 13.6 60 56.8" viewBox="2.8 13.6 60 56.8" height="75" width="65" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label="">
     <g>
         <path fill="#000000" d="M62.8 64.8c0 3.093-12.894 5.6-28.8 5.6S5.2 67.893 5.2 64.8c0-3.093 12.894-5.6 28.8-5.6s28.8 2.507 28.8 5.6z" data-color="1"></path>

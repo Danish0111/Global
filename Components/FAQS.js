@@ -19,8 +19,8 @@ const FAQS = () => {
     };
 
     return (
-        <div className="faqs h-[100%] py-10 bg-gray-100">
-            <h1 className='text-4xl font-bold mb-8 px-12 text-center'>Frequently Asked Questions</h1>
+        <div className="faqs h-[100%] px-4 py-10 bg-gray-100">
+            <h1 className='text-4xl font-bold mb-8 px-4 sm:px-12 text-center'>Frequently Asked Questions</h1>
             <div className="faqs-container max-w-3xl mx-auto">
                 {FAQs.map((faq) => (
                     <div key={faq.id} className="mb-4 bg-white rounded-lg shadow-md">
@@ -30,7 +30,7 @@ const FAQS = () => {
                                 className={`flex items-center justify-between w-full p-5 font-medium text-gray-500 border border-b-0 rounded-t-lg hover:bg-gray-100 ${open === faq.id ? 'bg-gray-200' : ''}`}
                                 onClick={() => toggleAccordion(faq.id)}
                             >
-                                <span>{faq.question}</span>
+                                <span className="text-left">{faq.question}</span>
                                 <svg className={`w-4 h-4 transform ${open === faq.id ? 'rotate-180' : ''}`} viewBox="0 0 10 6">
                                     <path stroke="currentColor" strokeWidth="2" d="M9 5 5 1 1 5" />
                                 </svg>

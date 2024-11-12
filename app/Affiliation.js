@@ -21,7 +21,7 @@ export default function AffiliationSlider() {
           <div className="slider-track">
             {duplicatedAffiliations.map((affiliation, index) => (
               <div className="slide" key={index}>
-                <img src={affiliation.logo} alt={affiliation.alt} />
+                <img className='' src={affiliation.logo} alt={affiliation.alt} />
               </div>
             ))}
           </div>
