@@ -49,6 +49,11 @@ body{
   animation: slide 10s linear infinite; /* Adjust duration as needed */
 }
 
+@media only screen and (max-width: 600px){
+  .text-slider {
+    animation: slide 5s linear infinite; /* Adjust duration as needed */
+  }
+}
 .slider-text {
   white-space: nowrap; /* Prevent line breaks */
   font-size: 1rem; /* Adjust font size */
@@ -150,6 +155,18 @@ body{
   height: auto;
 }
 
+@media only screen and (max-width: 600px){
+  .slide img {
+    width: 80%;
+  }
+  .slider-track {
+    gap: 20px;
+    animation: scroll 10s linear infinite;
+  }
+  .slide {
+    width: 100px; 
+  }
+}
 /* Keyframes for continuous scrolling */
 @keyframes scroll {
   0% {

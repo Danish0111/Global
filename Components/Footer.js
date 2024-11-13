@@ -117,11 +117,11 @@ const Footer = () => {
         </div>
       </footer>
 
-      <div className="copyright bg-yellow-400 p-2 flex justify-center items-center gap-4">
+      <div className="copyright w-[100%] bg-yellow-400 p-1 md:p-2 flex justify-center items-center gap-4">
         <div className="img">
-          <img className="w-16" src="/global-footer.png" alt="Logo" />
+          <img className="w-12 md:w-16" src="/global-footer.png" alt="Logo" />
         </div>
-        <span className="text-sm font-bold flex items-center gap-1">
+        <span className="text-xs md:text-sm font-bold flex items-center gap-1">
           <span className="text-lg"> &copy;</span> Global Educational Institute. All Rights Reserved
         </span>
       </div>

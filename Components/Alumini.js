@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState, useEffect } from 'react';
 
 const Alumini = () => {
   const alumniData = [
@@ -12,9 +12,27 @@ const Alumini = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(4); // Default to 4 cards for desktop
 
-  // Define max index based on total alumni and 4 items per view
-  const maxIndex = alumniData.length - 4;
+  // Update visible cards based on screen width
+  useEffect(() => {
+    const updateVisibleCards = () => {
+      if (window.innerWidth < 768) {
+        setVisibleCards(1); // Mobile view, show 1 card at a time
+      } else if (window.innerWidth < 1024) {
+        setVisibleCards(2); // Tablet view, show 2 cards at a time
+      } else {
+        setVisibleCards(4); // Desktop view, show 4 cards at a time
+      }
+    };
+
+    updateVisibleCards(); // Initial call to set correct card view
+    window.addEventListener("resize", updateVisibleCards);
+
+    return () => window.removeEventListener("resize", updateVisibleCards);
+  }, []);
+
+  const maxIndex = alumniData.length - visibleCards;
 
   const handleNext = () => {
     if (currentIndex < maxIndex) {
@@ -35,22 +53,22 @@ const Alumini = () => {
       </h1>
       <div className="alumini-slider relative flex justify-center items-center">
         <button onClick={handlePrev} className="absolute left-0 p-2 bg-gray-200 rounded">←</button>
-        
-        {/* Container for cards, restrict view to 4 at a time */}
+
+        {/* Container for cards */}
         <div className="alumini-container overflow-hidden w-[80%]">
           <div
             className="alumini-track flex transition-transform duration-500"
             style={{
-              width: `${alumniData.length * 25}%`,
+              width: `${(alumniData.length / visibleCards) * 100}%`,
               transform: `translateX(-${currentIndex * 17}%)`,
             }}
           >
             {alumniData.map((alumini, index) => (
               <div
                 key={index}
-                className="alumini-card w-[25%] flex flex-col justify-center items-center gap-4 min-h-[300px] bg-white shadow-lg p-4 m-2"
+                className={`alumini-card w-[${100 / visibleCards}%] flex flex-col justify-center items-center gap-4 min-h-[300px] bg-white shadow-lg p-4 m-2`}
               >
-                <div className="img w-[60%] bg-slate-100">
+                <div className="img w-[40%] lg:w-[60%] bg-slate-100">
                   <img src="/user.png" alt={alumini.name} />
                 </div>
                 <div className="info flex flex-col justify-center items-center">
@@ -65,7 +83,7 @@ const Alumini = () => {
             ))}
           </div>
         </div>
-        
+
         <button onClick={handleNext} className="absolute right-0 p-2 bg-gray-200 rounded">→</button>
       </div>
     </div>

@@ -4,7 +4,7 @@ const Advantages = () => {
     return (
         <>
             <div className="advantages h-[100%] sm:text-xs md:text-sm px-4  py-20 flex flex-col items-center gap-8">
-                <h1 className="text-4xl font-bold text-center mb-8">
+                <h1 className="w-full text-4xl font-bold text-center mb-8">
                     The GLOBAL EDUCATIONAL INSTITUTES Advantages
                 </h1>
 
