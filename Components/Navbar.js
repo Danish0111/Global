@@ -5,26 +5,29 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
-import { faCaretDown, faBars, faTimes } from "@fortawesome/free-solid-svg-icons"; // Hamburger & Close icons
+import { faCaretDown, faBars, faTimes, faGraduationCap } from "@fortawesome/free-solid-svg-icons"; // Hamburger & Close icons
 import Link from "next/link";
+import { Divider } from "@nextui-org/react";
 
 const Navbar = () => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
+
   // Toggle the menu visibility on mobile
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const handleNavigation = (path) => {
-      router.push(path);
+    router.push(path);
   };
+
   return (
     <div className="nav bg-slate-100 sticky z-10 top-0 shadow-md">
       <div className="wraper hidden lg:flex justify-end lg:mb-4">
         <div className="top-menu bg-[#122c74] w-[65%] absolute px-4">
-          <ul>
+          <ul className="flex items-center gap-6 text-sm font-semibold">
             <li>
               <Dropdown>
                 <DropdownTrigger>
@@ -34,17 +37,68 @@ const Navbar = () => {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Static Actions">
-                  <DropdownItem key="brochure">
-                    <Link href="/admission/brochure">Download Brochure</Link>
+                  <DropdownItem className="dropdown" key="brochure">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    <Link href="/admission/brochure">Download Brochure
+                      <div className="divider h-[1px] bg-gray-300 w-full"></div></Link>
                   </DropdownItem>
-                  <DropdownItem key="enquiry">
-                    <Link href="/admission/enquiry">Admission Enquiry Form</Link>
+                  <DropdownItem className="dropdown" key="enquiry">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    <Link href="/admission/enquiry">Admission Enquiry Form
+                      <div className="divider h-[1px] bg-gray-300 w-full"></div></Link>
                   </DropdownItem>
-                  <DropdownItem key="courses">
-                    <Link href="/admission/courses">Courses Offered</Link>
+                  <DropdownItem className="dropdown" key="courses">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    <Link href="/admission/courses">Courses Offered
+                      <div className="divider h-[1px] bg-gray-300 w-full"></div></Link>
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
+            </li>
+            <li>
+              <div className="admission text-white">Admission open 2024</div>
+              <style jsx>{`
+  .admission {
+    text-align: center;
+    padding: 5px 5px;
+    color: white;
+    background-color: #000; /* Black background to make colors pop */
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+
+    /* Enhanced box shadow with wider spread */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 1), 
+                0 0 20px rgba(0, 0, 255, 1), 
+                0 0 25px rgba(255, 0, 0, 1);
+
+    /* Sharper text shadow */
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.9), 
+                 0 0 10px rgba(0, 0, 255, 0.9), 
+                 0 0 15px rgba(255, 0, 0, 0.9);
+
+    /* Animation */
+    animation: glowingShadow 3s infinite ease-in-out;
+  }
+
+  @keyframes glowingShadow {
+    0% {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 1), 
+                  0 0 20px rgba(0, 0, 255, 1), 
+                  0 0 25px rgba(255, 0, 0, 1);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 0, 0, 1), 
+                  0 0 25px rgba(0, 255, 255, 1), 
+                  0 0 30px rgba(0, 0, 255, 1);
+    }
+    100% {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 1), 
+                  0 0 20px rgba(0, 0, 255, 1), 
+                  0 0 25px rgba(255, 0, 0, 1);
+    }
+  }
+`}</style>
             </li>
           </ul>
         </div>
@@ -85,32 +139,49 @@ const Navbar = () => {
                     <FontAwesomeIcon icon={faCaretDown} />
                   </Button>
                 </DropdownTrigger>
-                <DropdownMenu aria-label="Static Actions">
-                  <DropdownItem key="mca" onClick={() => handleNavigation("/courses/mca")}>
+                <DropdownMenu className="" aria-label="Static Actions">
+                  <DropdownItem className="dropdown" key="mca" onClick={() => handleNavigation("/courses/mca")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     MCA
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="mca-integrated" onClick={() => handleNavigation("/courses/mca-integrated")}>
+                  <DropdownItem className="dropdown" key="mca-integrated" onClick={() => handleNavigation("/courses/mca-integrated")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     MCA Integrated
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="mca-integrated" onClick={() => handleNavigation("/courses/mba-integrated")}>
+                  <DropdownItem className="dropdown" key="mca-integrated" onClick={() => handleNavigation("/courses/mba-integrated")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     MBA Integrated
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="mba" onClick={() => handleNavigation("/courses/mba")}>
+                  <DropdownItem className="dropdown" key="mba" onClick={() => handleNavigation("/courses/mba")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     MBA
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="bca" onClick={() => handleNavigation("/courses/bca")}>
+                  <DropdownItem className="dropdown" key="bca" onClick={() => handleNavigation("/courses/bca")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     BCA
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="bba" onClick={() => handleNavigation("/courses/bba")}>
+                  <DropdownItem className="dropdown" key="bba" onClick={() => handleNavigation("/courses/bba")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     BBA
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="bcom" onClick={() => handleNavigation("/courses/bcom")}>
+                  <DropdownItem className="dropdown" key="bcom" onClick={() => handleNavigation("/courses/b-com")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     B.COM
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="ba" onClick={() => handleNavigation("/courses/ba")}>
+                  <DropdownItem className="dropdown" key="ba" onClick={() => handleNavigation("/courses/ba")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     BA
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="bed" onClick={() => handleNavigation("/courses/bed")}>
+                  <DropdownItem className="dropdown" key="bed" onClick={() => handleNavigation("/courses/b-ed")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     B.ED
                   </DropdownItem>
                 </DropdownMenu>
@@ -130,11 +201,31 @@ const Navbar = () => {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Static Actions">
-                  <DropdownItem key="new">Lecture Hall</DropdownItem>
-                  <DropdownItem key="copy">Library</DropdownItem>
-                  <DropdownItem key="edit">Lab</DropdownItem>
-                  <DropdownItem key="edit">Cafeteria</DropdownItem>
-                  <DropdownItem key="edit">Hostel</DropdownItem>
+                  <DropdownItem className="dropdown" key="new">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Lecture Hall
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
+                  <DropdownItem className="dropdown" key="copy">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Library
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
+                  <DropdownItem className="dropdown" key="edit">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Lab
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
+                  <DropdownItem className="dropdown" key="edit">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Cafeteria
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
+                  <DropdownItem className="dropdown" key="edit">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Hostel
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </li>
@@ -147,11 +238,31 @@ const Navbar = () => {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Static Actions">
-                  <DropdownItem key="new">Seminars</DropdownItem>
-                  <DropdownItem key="copy">Workshops</DropdownItem>
-                  <DropdownItem key="edit">Industrial Visit</DropdownItem>
-                  <DropdownItem key="edit">Cultural Fest</DropdownItem>
-                  <DropdownItem key="edit">Sports</DropdownItem>
+                  <DropdownItem className="dropdown" key="new">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Seminars
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
+                  <DropdownItem className="dropdown" key="copy">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Workshops
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
+                  <DropdownItem className="dropdown" key="edit">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Industrial Visit
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
+                  <DropdownItem className="dropdown" key="edit">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Cultural Fest
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
+                  <DropdownItem className="dropdown" key="edit">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Sports
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </li>
@@ -164,11 +275,31 @@ const Navbar = () => {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Static Actions">
-                  <DropdownItem key="new">Global Institute & Overview</DropdownItem>
-                  <DropdownItem key="copy">Mission Vision and Quality Policy</DropdownItem>
-                  <DropdownItem key="edit">Organization</DropdownItem>
-                  <DropdownItem key="edit">Advisory Board</DropdownItem>
-                  <DropdownItem key="edit">Governing Body</DropdownItem>
+                  <DropdownItem className="dropdown" key="new">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Global Institute & Overview
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
+                  <DropdownItem className="dropdown" key="copy">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Mission Vision and Quality Policy
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
+                  <DropdownItem className="dropdown" key="edit">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Organization
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
+                  <DropdownItem className="dropdown" key="edit">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Advisory Board
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
+                  <DropdownItem className="dropdown" key="edit">
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
+                    Governing Body
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </li>
@@ -200,32 +331,50 @@ const Navbar = () => {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Static Actions">
-                <DropdownItem key="mca" onClick={() => handleNavigation("/courses/mca")}>
+                  <DropdownItem className="dropdown" key="mca" onClick={() => handleNavigation("/courses/mca")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     MCA
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="mca-integrated" onClick={() => handleNavigation("/courses/mca-integrated")}>
+                  <DropdownItem className="dropdown" key="mca-integrated" onClick={() => handleNavigation("/courses/mca-integrated")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     MCA Integrated
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="mca-integrated" onClick={() => handleNavigation("/courses/mba-integrated")}>
+                  <DropdownItem className="dropdown" key="mca-integrated" onClick={() => handleNavigation("/courses/mba-integrated")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     MBA Integrated
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="mba" onClick={() => handleNavigation("/courses/mba")}>
+                  <DropdownItem className="dropdown" key="mba" onClick={() => handleNavigation("/courses/mba")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     MBA
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="bca" onClick={() => handleNavigation("/courses/bca")}>
+                  <DropdownItem className="dropdown" key="bca" onClick={() => handleNavigation("/courses/bca")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     BCA
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="bba" onClick={() => handleNavigation("/courses/bba")}>
+                  <DropdownItem className="dropdown" key="bba" onClick={() => handleNavigation("/courses/bba")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     BBA
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="bcom" onClick={() => handleNavigation("/courses/bcom")}>
+                  <DropdownItem className="dropdown" key="bcom" onClick={() => handleNavigation("/courses/bcom")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     B.COM
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="ba" onClick={() => handleNavigation("/courses/ba")}>
+                  <DropdownItem className="dropdown" key="ba" onClick={() => handleNavigation("/courses/ba")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     BA
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem key="bed" onClick={() => handleNavigation("/courses/bed")}>
+                  <DropdownItem className="dropdown" key="bed" onClick={() => handleNavigation("/courses/bed")}>
+                    <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     B.ED
+                    <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
