@@ -12,7 +12,7 @@ import { Divider } from "@nextui-org/react";
 const Navbar = () => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+
 
   // Toggle the menu visibility on mobile
   const toggleMenu = () => {
@@ -201,27 +201,27 @@ const Navbar = () => {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Static Actions">
-                  <DropdownItem className="dropdown" key="new">
+                  <DropdownItem className="dropdown" key="lecture">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Lecture Hall
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem className="dropdown" key="copy">
+                  <DropdownItem className="dropdown" key="library">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Library
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem className="dropdown" key="edit">
+                  <DropdownItem className="dropdown" key="lab">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Lab
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem className="dropdown" key="edit">
+                  <DropdownItem className="dropdown" key="cafeteria">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Cafeteria
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem className="dropdown" key="edit">
+                  <DropdownItem className="dropdown" key="hostel">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Hostel
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
@@ -238,27 +238,27 @@ const Navbar = () => {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Static Actions">
-                  <DropdownItem className="dropdown" key="new">
+                  <DropdownItem className="dropdown" key="seminars">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Seminars
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem className="dropdown" key="copy">
+                  <DropdownItem className="dropdown" key="workshops">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Workshops
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem className="dropdown" key="edit">
+                  <DropdownItem className="dropdown" key="industrial-visit">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Industrial Visit
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem className="dropdown" key="edit">
+                  <DropdownItem className="dropdown" key="cultural-fest">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Cultural Fest
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem className="dropdown" key="edit">
+                  <DropdownItem className="dropdown" key="sports">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Sports
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
@@ -275,27 +275,27 @@ const Navbar = () => {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Static Actions">
-                  <DropdownItem className="dropdown" key="new">
+                  <DropdownItem className="dropdown" key="overview">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Global Institute & Overview
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem className="dropdown" key="copy">
+                  <DropdownItem className="dropdown" key="mission">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Mission Vision and Quality Policy
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem className="dropdown" key="edit">
+                  <DropdownItem className="dropdown" key="Organization">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Organization
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem className="dropdown" key="edit">
+                  <DropdownItem className="dropdown" key="Advisory">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Advisory Board
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
                   </DropdownItem>
-                  <DropdownItem className="dropdown" key="edit">
+                  <DropdownItem className="dropdown" key="Governing">
                     <FontAwesomeIcon className="pr-2" icon={faGraduationCap} />
                     Governing Body
                     <div className="divider h-[1px] bg-gray-300 w-full"></div>
@@ -304,7 +304,8 @@ const Navbar = () => {
               </Dropdown>
             </li>
             <li>
-              <Button color="primary" variant="light">
+              <Button color="primary" variant="light" onClick={() => handleNavigation("/Contact")}>
+                {/* <Link href="/Contact">Contact Us</Link> */}
                 Contact Us
               </Button>
             </li>

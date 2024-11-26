@@ -375,6 +375,18 @@ body{
   color: white !important;
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.contact-img img {
+  animation: float 3s ease-in-out infinite;
+}
 /* .dropdown.icon{
   color: #057EF6 !important;
 }
